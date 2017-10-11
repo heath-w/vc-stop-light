@@ -1,8 +1,11 @@
 <template>
 	<div class="light">
-		<bulb light-color="red" v-on:red="catchRed()" />
-		<bulb light-color="yellow" v-on:yellow="catchYellow()" />
-		<bulb light-color="green" v-on:green="catchGreen()" />
+		<bulb light-color="red" 
+		      v-on:bulbClicked="catchBulbCLick" />
+		<bulb light-color="yellow" 
+					v-on:bulbClicked="catchBulbCLick" />
+		<bulb light-color="green" 
+					v-on:bulbClicked="catchBulbCLick" />
 	</div>
 </template>
 
@@ -15,14 +18,8 @@
 			bulb
 		},
 		methods : {
-			catchRed : function( ) {
-				alert( 'red light clicked' );
-			},
-			catchYellow : function( ) {
-				alert( 'yellow light clicked' );
-			},
-			catchGreen : function( ) {
-				alert( 'green light clicked' );
+			catchBulbCLick : function( color ) {
+				this.$emit( 'lightClicked', color );
 			}
 		}
 	}

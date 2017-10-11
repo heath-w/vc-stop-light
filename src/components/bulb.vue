@@ -10,7 +10,7 @@
 		props : [ 'lightColor' ],
 		methods : {
 			reportClickToParent : function( colorClicked ) {
-				this.$emit( colorClicked );
+				this.$emit( 'bulbClicked', colorClicked );
 			}
 		}
 	};

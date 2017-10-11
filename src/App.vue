@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Example of Webpack simple</h1>
 
-    <light />
+    <light v-on:lightClicked="catchLight"/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@
     name: 'app',
     components : {
       light
+    },
+    methods : {
+      catchLight : function( color ) {
+        alert( 'light was clicked...' + color );
+      }
     },
     data () {
       return {
