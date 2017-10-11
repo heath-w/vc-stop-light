@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Example of Webpack simple</h1>
+    <h1><strong>Stop</strong> in the name of Light!</h1>
 
     <light v-on:lightClicked="catchLight"/>
   </div>
@@ -15,15 +15,17 @@
       light
     },
     methods : {
-      catchLight : function( color ) {
-        alert( 'light was clicked...' + color );
-      }
+      catchLight : catchLight
     },
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     }
+  }
+
+  function catchLight( color ) {    
+    alert( 'light was clicked...' + color );    
   }
 </script>
 
