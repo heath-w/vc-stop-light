@@ -1,8 +1,8 @@
 <template>
 	<div class="light">
-		<bulb light-color="red"/>
-		<bulb light-color="yellow" />
-		<bulb light-color="green" />
+		<bulb light-color="red" v-on:red="catchRed()" />
+		<bulb light-color="yellow" v-on:yellow="catchYellow()" />
+		<bulb light-color="green" v-on:green="catchGreen()" />
 	</div>
 </template>
 
@@ -13,6 +13,17 @@
 		name : 'light',
 		components : {
 			bulb
+		},
+		methods : {
+			catchRed : function( ) {
+				alert( 'red light clicked' );
+			},
+			catchYellow : function( ) {
+				alert( 'yellow light clicked' );
+			},
+			catchGreen : function( ) {
+				alert( 'green light clicked' );
+			}
 		}
 	}
 </script>

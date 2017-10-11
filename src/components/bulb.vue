@@ -1,11 +1,18 @@
 <template>
-	<div class="bulb" v-bind:class="lightColor"></div>
+	<div class="bulb" 
+	     v-bind:class="lightColor"
+	     v-on:click="reportClickToParent(lightColor)"></div>
 </template>
 
 <script>
 	export default {
 		name : 'bulb',
-		props : [ 'lightColor' ]
+		props : [ 'lightColor' ],
+		methods : {
+			reportClickToParent : function( colorClicked ) {
+				this.$emit( colorClicked );
+			}
+		}
 	};
 </script>
 
