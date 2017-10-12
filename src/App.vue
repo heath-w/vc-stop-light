@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1><strong>Stop</strong> in the name of Light!</h1>
-
-    <light v-on:lightClicked="catchLight"/>
+    <button v-on:click="testMethod">test</button>
+    <light v-on:lightClicked="catchLight" v-on:click="testMethod"/>
   </div>
 </template>
 
@@ -15,11 +15,13 @@
       light
     },
     methods : {
-      catchLight : catchLight
-    },
+      catchLight : catchLight,
+      testMethod : function() { console.log( 'test: ' + this.initialCardData ); }
+    },    
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        initialCardData : 'testgkgkjgbkjbjmvjkbmjkjb'
       }
     }
   }

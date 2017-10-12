@@ -20,8 +20,14 @@
 		methods : {
 			catchBulbCLick : function( color ) {
 				this.$emit( 'lightClicked', color );
+				console.log( 'lightstuff: ' + this.lightStuff );
 			}
-		}
+		},
+		data () {
+      return {
+        lightStuff: 'kajbsdbkvdjjkab.sdabfjksdadfbjk.avsdbjk.svabjk.asvbjk.vadsbjk.adsvbk.jvdsabj'
+      }
+    }
 	}
 </script>
 
